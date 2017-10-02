@@ -181,12 +181,7 @@ mainAppControllers.controller('mainController', ['$scope','$http', '$window',
         success(function(data, status, headers, config){
             var data = data;
 
-            var totalMayo = 0;//data["rows"][0]["value"]+data["rows"][1]["value"]+data["rows"][2]["value"];
-            var totalJunio = 0;//data["rows"][3]["value"] + data["rows"][4]["value"] + data["rows"][5]["value"];
-            var totalJulio = 0;//data["rows"][6]["value"] + data["rows"][7]["value"] + data["rows"][8]["value"];
-            var totalAgosto = data["rows"][0]["value"] + data["rows"][1]["value"] + data["rows"][2]["value"];
-            var totalSeptiembre = data["rows"][3]["value"] + data["rows"][4]["value"] + data["rows"][5]["value"];
-
+            console.log(data);
 
             /* Gráfico Barras Morris Anual */
             var bar = new Morris.Bar({
@@ -200,9 +195,9 @@ mainAppControllers.controller('mainController', ['$scope','$http', '$window',
                 {y: 'May', a: 0, b: 0, c: 0},
                 {y: 'Jun', a: 0, b: 0, c: 0},
                 {y: 'Jul', a: 0, b: 0, c: 0},
-                {y: "Ago", a: data["rows"][3]["value"], b: data["rows"][5]["value"], c: data["rows"][4]["value"]},
-                {y: "Sep", a: data["rows"][0]["value"], b: data["rows"][2]["value"], c: data["rows"][1]["value"]},
-                {y: "Oct", a: 0, b: 0, c: 0},
+                {y: "Ago", a: data["rows"][2]["value"], b: data["rows"][0]["value"], c: data["rows"][1]["value"]},
+                {y: "Sep", a: data["rows"][5]["value"], b: data["rows"][3]["value"], c: data["rows"][4]["value"]},
+                {y: "Oct", a: data["rows"][8]["value"], b: data["rows"][6]["value"], c: data["rows"][7]["value"]},
                 {y: "Nov", a: 0, b: 0, c: 0},
                 {y: "Dic", a: 0, b: 0, c: 0}
               ],
